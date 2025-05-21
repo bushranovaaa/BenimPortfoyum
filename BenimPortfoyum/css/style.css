@@ -1,0 +1,53 @@
+/* Inter fontunu dahil et */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Tailwind zaten arka plan ve metin rengini ayarlıyor,
+       ama burada genel bir fallback veya override yapabilirsin. */
+    /* background-color: #1a202c; */
+    /* color: #e2e8f0; */
+}
+
+/* Özel kaydırma davranışı */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Bölüm başlıkları için özel stil */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px; /* Alt çizgi için boşluk */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%; /* Başlığın yarısı kadar çizgi */
+    height: 3px;
+    background-color: #a78bfa; /* Mor renk */
+    border-radius: 9999px; /* Yuvarlak köşeler */
+}
+
+/* Kahraman bölümü için animasyonlar */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s; /* Hafif gecikme */
+}

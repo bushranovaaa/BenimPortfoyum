@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büşra Kurt - Yazılım Geliştirici & Siber Güvenlik Öğrencisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+
+    <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg py-4 fixed w-full z-10">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-6">
+            <a href="#hero" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white transition-all duration-300">Büşra Kurt</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-gray-300 transition-colors duration-300">Hakkımda</a>
+                <a href="#skills" class="hover:text-gray-300 transition-colors duration-300">Yetenekler</a>
+                <a href="#projects" class="hover:text-gray-300 transition-colors duration-300">Projeler</a>
+                <a href="#certifications" class="hover:text-gray-300 transition-colors duration-300">Sertifikalar</a>
+                <a href="#contact" class="hover:text-gray-300 transition-colors duration-300">İletişim</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 mt-2 py-2 px-4 rounded-b-lg">
+            <a href="#about" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Hakkımda</a>
+            <a href="#skills" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Yetenekler</a>
+            <a href="#projects" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Projeler</a>
+            <a href="#certifications" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Sertifikalar</a>
+            <a href="#contact" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">İletişim</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(to right, #4c51bf, #7f58af);">
+        <div class="absolute inset-0 bg-black opacity-70"></div> <div class="relative z-10 text-white p-6 md:p-10 bg-black bg-opacity-50 rounded-xl shadow-2xl max-w-3xl mx-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">Büşra Kurt</h1>
+            <p class="text-xl md:text-2xl font-light mb-6 animate-fade-in-up">Software Developer & Aspiring Ethical Hacker | Mobile & Full-Stack Web Developer</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#about" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Hakkımda</a>
+                <a href="#projects" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Projelerime Göz At</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Hakkımda</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <img src="1000164703.jpg" alt="Büşra Kurt Portre" class="rounded-full shadow-xl mx-auto w-48 h-48 object-cover border-4 border-purple-500">
+                </div>
+                <div class="md:w-2/3 text-lg leading-relaxed text-gray-200">
+                    <p class="mb-4">Yazılım geliştirme alanında kendimi sürekli geliştiren, dinamik bir **Yazılım Geliştirici** ve **Siber Güvenlik Öğrencisiyim**. Mobil ve Full-Stack Web Geliştirme alanlarında yeteneklerimi pekiştirirken, öğrendiğim her yeni bilgiyi güvenlik ilkeleriyle harmanlayarak sağlam, güvenli ve kullanıcı odaklı dijital çözümler üretmeyi hedefliyorum.</p>
+                    <p class="mb-4">Teknolojiye olan tutkum beni her geçen gün yeni ufuklara taşıyor. Şu anda **Java, Python, Dart ve Flutter** gibi diller ve framework'lerle mobil uygulama geliştirme konusunda derinlemesine bilgi ediniyorum. Siber güvenlik alanındaki eğitimlerimle yazılım geliştirme bilgimi daha güvenli ve dirençli sistemler kurma yönünde kullanıyorum. **SQL** ve **Siber Güvenlik** konularındaki öğrenme yolculuğum da hızla devam ediyor.</p>
+                    <p>Geçmişteki depo yönetimi, montaj işçiliği ve hatta garsonluk gibi farklı sektörlerdeki deneyimlerimden edindiğim **planlama, kalite kontrol, takım çalışması, problem çözme ve müşteri memnuniyeti odaklılık** gibi prensipleri, yazılım geliştirme süreçlerime de başarıyla aktarıyorum. Her işte olduğu gibi, yazılımda da detaylara dikkat etmek ve verimli çalışmak benim için bir tutku.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Yetenekler</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Programlama Dilleri & Teknolojiler</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-200">
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>Dart</li>
+                        <li>Flutter</li>
+                        <li>SQL</li>
+                        <li>HTML, CSS, JavaScript (Temel)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Siber Güvenlik</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-200">
+                        <li>Dijital Güvenlik İlkeleri</li>
+                        <li>Siber Güvenlik Temelleri</li>
+                        <li>Etik Hackerlık (Öğrenim Aşamasında)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Yapay Zeka</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-200">
+                        <li>Yapay Zeka ile Pazarlama Stratejileri</li>
+                        <li>Temel Yapay Zeka Uygulamaları</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Kişisel Yetenekler</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-200">
+                        <li>Problem Çözme ve Analitik Düşünme</li>
+                        <li>Takım Çalışması ve Etkin İletişim</li>
+                        <li>Kalite Kontrol ve Detay Odaklılık</li>
+                        <li>Hızlı Öğrenme ve Adaptasyon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Projelerim</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="projects/mobil-uygulama.html" class="block bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Mobil Uygulama Geliştirme (Flutter)</h3>
+                    <p class="text-gray-200 mb-4 flex-grow">Kullanıcı dostu arayüze sahip, çapraz platform uyumlu bir mobil uygulama projesi. Dart ve Flutter framework'ünü kullanarak geliştirildi.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Flutter</span>
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Dart</span>
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">UI/UX</span>
+                    </div>
+                    <div class="flex justify-end space-x-3 mt-auto">
+                        <span class="text-indigo-400 flex items-center">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Detayları Gör
+                        </span>
+                    </div>
+                </a>
+
+                <a href="projects/siber-guvenlik-araci.html" class="block bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Siber Güvenlik Aracı (Python)</h3>
+                    <p class="text-gray-200 mb-4 flex-grow">Gelecekte geliştirilecek, güvenlik açıklarını tespit etmeye ve veri korumaya yönelik potansiyel bir araç.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Siber Güvenlik</span>
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Gelecek Proje</span>
+                    </div>
+                    <div class="flex justify-end space-x-3 mt-auto">
+                        <span class="text-indigo-400 flex items-center">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Detayları Gör
+                        </span>
+                    </div>
+                </a>
+
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Web Uygulaması Geliştirme (Java)</h3>
+                    <p class="text-gray-200 mb-4 flex-grow">Veritabanı entegrasyonlu, dinamik bir web uygulaması projesi. Java ve ilgili web teknolojileri kullanılarak geliştirildi.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Java</span>
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Web Geliştirme</span>
+                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Veritabanı</span>
+                    </div>
+                    <div class="flex justify-end space-x-3 mt-auto">
+                        <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 flex items-center">
+                            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.775.418-1.305.762-1.605-2.665-.3-5.464-1.33-5.464-5.93 0-1.31.465-2.38 1.235-3.22-.125-.3-.535-1.52.117-3.176 0 0 1.008-.322 3.301 1.23a11.51 11.51 0 016 0c2.293-1.552 3.3-1.23 3.3-1.23.653 1.656.243 2.876.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.8 5.62-5.475 5.92.43.37.81 1.096.81 2.22 0 1.606-.015 2.898-.015 3.286 0 .318.21.69.825.577C20.565 21.8 24 17.303 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 mt-12 text-lg">Daha fazla projem için <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">GitHub profilimi</a> ziyaret edebilirsiniz!</p>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Sertifikalarım</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-lg font-medium text-gray-200">EmpowerHER Ideathon</p>
+                    </div>
+                    <p class="text-sm text-gray-300">Kadınların teknoloji alanındaki projelerini destekleyen bir ideathon'a katılım ve yenilikçi fikir geliştirme sürecinde yer aldım.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-lg font-medium text-gray-200">Gelecek Hayalim Projesi: W-Code</p>
+                    </div>
+                    <p class="text-sm text-gray-300">Yazılım geliştirme becerilerini ilerletmeye yönelik kapsamlı bir eğitim programını başarıyla tamamladım.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-lg font-medium text-gray-200">Kendi İşini Kur: Girişimci Doğulmaz; Girişimci Gibi Düşünülür!</p>
+                    </div>
+                    <p class="text-sm text-gray-300">Girişimcilik ve iş kurma süreçleri hakkında temel bilgi ve stratejiler edinerek, kendi işimi kurma potansiyelimi geliştirdim.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-lg font-medium text-gray-200">IBM ile Kodluyoruz: CyberStart</p>
+                    </div>
+                    <p class="text-sm text-gray-300">Siber güvenlik alanında pratik beceriler kazanarak ve temel güvenlik prensiplerini öğrenerek dijital dünyayı daha güvenli hale getirme yeteneğimi artırdım.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-lg font-medium text-gray-200">Microsoft Word Temelleri</p>
+                    </div>
+                    <p class="text-sm text-gray-300">Microsoft Word programının temel özelliklerini ve kullanımını öğrenerek belge oluşturma ve düzenleme becerilerimi geliştirdim.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-sm text-gray-300">Bilgisayar bilimlerinin temelini oluşturan algoritmalar ve veri yapıları hakkında derinlemesine bilgi edinerek, daha verimli ve optimize edilmiş kod yazma yeteneğimi artırdım.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4 md:px-6 max-w-2xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto text-white">İletişim</h2>
+            <p class="text-lg text-gray-200 mb-8">Benimle iletişime geçmekten çekinmeyin! Projeleriniz veya işbirlikleri için her zaman açığım.</p>
+            <div class="flex flex-col items-center space-y-6">
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md w-full max-w-sm hover:shadow-xl transition-shadow duration-300">
+                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>
+                    <a href="mailto:bushra.dev@hotmail.com" class="text-lg font-medium text-gray-200 hover:text-indigo-300 transition-colors duration-300">bushra.dev@hotmail.com</a>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md w-full max-w-sm hover:shadow-xl transition-shadow duration-300">
+                    <svg class="w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                    <a href="https://www.linkedin.com/in/bushra-dev" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-gray-200 hover:text-indigo-300 transition-colors duration-300">LinkedIn Profilim</a>
+                </div>
+                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md w-full max-w-sm hover:shadow-xl transition-shadow duration-300">
+                    <svg class="w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.775.418-1.305.762-1.605-2.665-.3-5.464-1.33-5.464-5.93 0-1.31.465-2.38 1.235-3.22-.125-.3-.535-1.52.117-3.176 0 0 1.008-.322 3.301 1.23a11.51 11.51 0 016 0c2.293-1.552 3.3-1.23 3.3-1.23.653 1.656.243 2.876.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.8 5.62-5.475 5.92.43.37.81 1.096.81 2.22 0 1.606-.015 2.898-.015 3.286 0 .318.21.69.825.577C20.565 21.8 24 17.303 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
+                    <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-gray-200 hover:text-indigo-300 transition-colors duration-300">GitHub Profilim</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="current-year"></span> Büşra Kurt. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
