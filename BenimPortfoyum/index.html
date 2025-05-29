@@ -3,239 +3,601 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Büşra Kurt - Yazılım Geliştirici & Siber Güvenlik Öğrencisi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Büşra Kurt | Dijital Dünyanın Mimarı & Siber Güvenlik Zırhı</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Orbitron:wght@400;700;900&display=swap'); /* Başlık için Orbitron, genel metin için Ralewat */
+
+        :root { /* Ana renk paleti değişkenleri */
+            --primary-dark: #0f001a;
+            --secondary-dark: #1e0026;
+            --accent-purple: #9c27b0; /* Daha mor */
+            --accent-pink: #e91e63; /* Canlı pembe */
+            --text-light: #f0f0f0;
+            --text-muted: #d0d0d0;
+            --highlight-neon: #ffeb3b; /* Neon sarısı */
+            --glow-purple: #b600f9;
+            --glow-pink: #ff007f;
+            --skill-bg-dark: rgba(255, 255, 255, 0.1);
+            --card-bg-dark: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(120deg, var(--accent-purple), var(--accent-pink));
+            text-align: center;
+            padding: 120px 20px; /* Daha fazla padding */
+            position: relative;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Daha belirgin gölge */
+            animation: headerEntrance 1.5s ease-out forwards;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.07) 5%, transparent 20%),
+                        radial-gradient(circle at bottom right, rgba(255,255,255,0.07) 5%, transparent 20%);
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        @keyframes headerEntrance {
+            from { opacity: 0; transform: translateY(-100px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif; /* Daha futuristik font */
+            font-size: 5.5rem; /* Daha da büyüdü */
+            margin: 0;
+            color: var(--text-light);
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px var(--highlight-neon); /* Neon parlama */
+            font-weight: 900;
+            letter-spacing: 3px; /* Harf aralığı */
+        }
+        header p {
+            font-size: 1.8rem; /* Daha da büyüdü */
+            color: var(--text-muted);
+            margin-top: 25px;
+            font-weight: 700;
+            opacity: 0.98;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .header-social {
+            margin-top: 30px;
+        }
+        .header-social a {
+            color: var(--text-light);
+            font-size: 2.2rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-shadow: 0 0 10px var(--accent-purple);
+        }
+        .header-social a:hover {
+            color: var(--highlight-neon);
+            transform: scale(1.15);
+            text-shadow: 0 0 20px var(--highlight-neon), 0 0 30px var(--glow-pink);
+        }
+
+
+        .section {
+            padding: 90px 20px;
+            max-width: 1100px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: sectionFadeIn 0.8s forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section:nth-of-type(1) { animation-delay: 0.6s; }
+        .section:nth-of-type(2) { animation-delay: 0.9s; }
+        .section:nth-of-type(3) { animation-delay: 1.2s; }
+        .section:nth-of-type(4) { animation-delay: 1.5s; }
+        .section:nth-of-type(5) { animation-delay: 1.8s; }
+        .section:nth-of-type(6) { animation-delay: 2.1s; }
+
+        @keyframes sectionFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: var(--highlight-neon);
+            border-bottom: 5px solid var(--accent-pink); /* Kalın pembe çizgi */
+            padding-bottom: 15px;
+            margin-bottom: 60px;
+            text-shadow: 0 0 20px rgba(255, 235, 59, 0.9);
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .about-text {
+            font-size: 1.25rem; /* Hakkımda yazısı daha büyük */
+            color: var(--text-muted);
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px; /* Aralıkları artır */
+            margin-bottom: 50px;
+            justify-content: center;
+        }
+        .skills-container span {
+            display: inline-block;
+            background: var(--skill-bg-dark);
+            padding: 16px 25px;
+            border-radius: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 12px rgba(156, 39, 176, 0.5);
+            transition: all 0.3s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .skills-container span::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+            opacity: 0;
+        }
+        .skills-container span:hover::before {
+            width: 250%;
+            height: 250%;
+            opacity: 1;
+        }
+        .skills-container span:hover {
+            background: var(--accent-pink);
+            transform: translateY(-9px) scale(1.08);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.7), 0 0 35px var(--highlight-neon);
+            color: #fff;
+            border-color: var(--highlight-neon);
+        }
+
+        .project, .experience-item, .education-item, .learning-item { /* Yeni öğrenimler için */
+            background: var(--card-bg-dark);
+            border-left: 8px solid var(--accent-pink);
+            padding: 35px;
+            border-radius: 18px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 18px rgba(233, 30, 99, 0.35);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .project:hover, .experience-item:hover, .education-item:hover, .learning-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 35px var(--glow-purple);
+        }
+        .project h3, .experience-item h3, .education-item h3, .learning-item h3 {
+            margin-top: 0;
+            color: var(--highlight-neon);
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.6);
+            font-weight: 700;
+        }
+        .project p, .experience-item p, .education-item p, .learning-item p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+        .experience-item p.duration, .experience-item p.location, .education-item .duration, .learning-item .duration {
+            font-size: 1.05rem;
+            color: var(--accent-purple);
+            margin: 0;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+        .experience-item ul li {
+            margin-bottom: 14px;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 35px;
+            font-size: 1.1rem;
+        }
+        .experience-item ul li::before {
+            content: '⚡'; /* Şimşek ikonu! */
+            color: var(--highlight-neon);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.3em;
+        }
+
+        /* Sertifika Flip Kart Tasarımı */
+        .certs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Daha büyük kartlar */
+            gap: 35px;
+        }
+        .flip-card {
+            perspective: 1500px; /* Daha derin perspektif */
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 280px; /* Daha yüksek kartlar */
+            text-align: center;
+            transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Daha etkileyici geçiş */
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
+            border: 3px solid var(--glow-purple);
+            box-sizing: border-box;
+        }
+        .flip-card-front {
+            background: linear-gradient(135deg, var(--skill-bg-dark), rgba(255, 255, 255, 0.07));
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 1.6rem;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+            transition: background 0.3s ease;
+        }
+        .flip-card-front:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), var(--skill-bg-dark));
+        }
+        .flip-card-back {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            color: var(--text-light);
+            transform: rotateY(180deg);
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.6;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            border-color: var(--highlight-neon);
+        }
+        a {
+            color: var(--highlight-neon);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 6px rgba(255, 235, 59, 0.5);
+        }
+        a:hover {
+            color: var(--text-light);
+            text-shadow: 0 0 12px var(--glow-pink), 0 0 25px var(--glow-purple);
+            transform: translateY(-4px) scale(1.03);
+        }
+        footer {
+            background: var(--primary-dark);
+            padding: 60px;
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-top: 90px;
+            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.5);
+        }
+        .footer-social-links {
+            margin-top: 30px;
+        }
+        .footer-social-links a {
+            margin: 0 25px;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            color: var(--accent-purple);
+        }
+        .footer-social-links a:hover {
+            transform: scale(1.25);
+            color: var(--highlight-neon);
+            text-shadow: 0 0 18px var(--highlight-neon);
+        }
+
+        /* Mobil uyumluluk iyileştirmeleri */
+        @media (max-width: 768px) {
+            header {
+                padding: 80px 15px;
+            }
+            header h1 {
+                font-size: 3.5rem;
+                letter-spacing: 1px;
+            }
+            header p {
+                font-size: 1.5rem;
+            }
+            .header-social a {
+                font-size: 1.8rem;
+                margin: 0 10px;
+            }
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 40px;
+                letter-spacing: 1px;
+            }
+            .section {
+                padding: 50px 15px;
+            }
+            .about-text {
+                font-size: 1.1rem;
+            }
+            .skills-container span {
+                padding: 12px 18px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+            .project, .experience-item, .education-item, .learning-item {
+                padding: 25px;
+                margin-bottom: 35px;
+                border-radius: 15px;
+            }
+            .project h3, .experience-item h3, .education-item h3, .learning-item h3 {
+                font-size: 2rem;
+            }
+            .project p, .experience-item p, .education-item p, .learning-item p {
+                font-size: 1.05rem;
+            }
+            .experience-item ul li {
+                padding-left: 30px;
+                font-size: 1rem;
+            }
+            .experience-item ul li::before {
+                font-size: 1.2em;
+            }
+            .certs-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .flip-card-inner {
+                height: 250px;
+            }
+            .flip-card-front, .flip-card-back {
+                font-size: 1.2rem;
+                padding: 20px;
+                border-radius: 18px;
+            }
+            .flip-card-back {
+                font-size: 1rem;
+            }
+            footer {
+                padding: 40px;
+                font-size: 0.95rem;
+            }
+            .footer-social-links a {
+                font-size: 1.5rem;
+                margin: 0 15px;
+            }
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body>
+<header>
+    <h1>BÜŞRA KURT</h1>
+    <p>Dijital Dünyanın Mimarı & Siber Güvenlik Zırhı 🛡️ | Problem Çözen Kodlar, Güvenli Yarınlar 🚀</p>
+    <div class="header-social">
+        <a href="https://www.linkedin.com/in/bushranovaaa/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profili"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" title="GitHub Repolarım"><i class="fab fa-github"></i></a>
+        <a href="mailto:bushra.dev@hotmail.com" title="Bana Ulaşın"><i class="fas fa-envelope"></i></a>
+    </div>
+</header>
 
-    <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg py-4 fixed w-full z-10">
-        <nav class="container mx-auto flex justify-between items-center px-4 md:px-6">
-            <a href="#hero" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white transition-all duration-300">Büşra Kurt</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-gray-300 transition-colors duration-300">Hakkımda</a>
-                <a href="#skills" class="hover:text-gray-300 transition-colors duration-300">Yetenekler</a>
-                <a href="#projects" class="hover:text-gray-300 transition-colors duration-300">Projeler</a>
-                <a href="#certifications" class="hover:text-gray-300 transition-colors duration-300">Sertifikalar</a>
-                <a href="#contact" class="hover:text-gray-300 transition-colors duration-300">İletişim</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 mt-2 py-2 px-4 rounded-b-lg">
-            <a href="#about" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Hakkımda</a>
-            <a href="#skills" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Yetenekler</a>
-            <a href="#projects" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Projeler</a>
-            <a href="#certifications" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">Sertifikalar</a>
-            <a href="#contact" class="block py-2 px-4 text-white hover:bg-gray-700 rounded-md transition-colors duration-300">İletişim</a>
-        </div>
-    </header>
+<div class="section">
+    <h2>Hakkımda: Maceraya Hazır Bir Zihin!</h2>
+    <p class="about-text">Kariyerime disiplin, titizlik ve süreç optimizasyonu gibi değerlerle yoğrulmuş fiziksel ortamlardan (depo, üretim, servis) geliyorum. Bu deneyimler bana sadece iş akışlarını değil, aynı zamanda her problemin altında yatan mantığı sorgulama ve "daha iyisi mümkün mü?" diye cesurca sorma yeteneği kazandırdı. Şimdilerde ise bu analitik zihnimi, yazılım geliştirme ve siber güvenliğin kesiştiği o heyecan verici alana adadım.</p>
+    <p class="about-text">Tek bir kod tabanıyla tüm platformlarda (web, mobil, masaüstü) fırtına gibi esecek, sadece kullanıcı dostu değil, aynı zamanda siber saldırılara karşı zırhlanmış dijital çözümler üretmek benim asıl hedefim. Java, Python, Dart, Flutter gibi güçlü diller ve framework'lerle kendimi sürekli geliştirirken, PostgreSQL gibi veritabanlarıyla backend'i inşa etme becerimi de perçinliyorum. Her satır kodu bir keşif, her proje bir meydan okuma benim için. Dijital dünyada sadece var olmak değil, fark yaratmak; her çözdüğüm problemle daha güvenli ve yenilikçi yarınlar inşa etmek için buradayım. Sorgulayıcı, ileri görüşlü ve daima öğrenmeye aç bir zihinle, sıra dışı projelere imza atmak için sabırsızlanıyorum!</p>
+</div>
 
-    <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(to right, #4c51bf, #7f58af);">
-        <div class="absolute inset-0 bg-black opacity-70"></div> <div class="relative z-10 text-white p-6 md:p-10 bg-black bg-opacity-50 rounded-xl shadow-2xl max-w-3xl mx-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">Büşra Kurt</h1>
-            <p class="text-xl md:text-2xl font-light mb-6 animate-fade-in-up">Software Developer & Aspiring Ethical Hacker | Mobile & Full-Stack Web Developer</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#about" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Hakkımda</a>
-                <a href="#projects" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Projelerime Göz At</a>
-            </div>
-        </div>
-    </section>
+<div class="section">
+    <h2>Yetenek Sandığımın İçindekiler</h2>
+    <div class="skills-container">
+        <span>Java</span>
+        <span>Python</span>
+        <span>Dart</span>
+        <span>Flutter (Mobil)</span>
+        <span>Dijital Güvenlik & Siber Savunma</span> <span>Cross-Platform Development</span>
+        <span>PostgreSQL</span>
+        <span>Algoritmalar & Veri Yapıları</span> <span>Firebase Entegrasyonu</span>
+        <span>Yapay Zeka (AI) Temelleri</span> <span>Yapay Zeka ile Pazarlama Stratejisi</span>
+        <span>Terminal Komutları</span>
+        <span>Çevik Proje Yönetimi (Scrum/Kanban)</span> <span>UI/UX Tasarım İlkeleri</span>
+        <span>SQLite Veritabanı</span>
+        <span>Envanter Yönetimi</span>
+        <span>Süreç Optimizasyonu</span>
+        <span>Ekip Çalışması & Liderlik</span> <span>Eleştirel Düşünme & Problem Çözme</span>
+        <span>SQL & Veri Bilimi Temelleri</span> </div>
+</div>
 
-    <section id="about" class="py-16 md:py-24 bg-gray-800">
-        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Hakkımda</h2>
-            <div class="flex flex-col md:flex-row items-center md:space-x-12">
-                <div class="md:w-1/3 mb-8 md:mb-0">
-                    <img src="1000164703.jpg" alt="Büşra Kurt Portre" class="rounded-full shadow-xl mx-auto w-48 h-48 object-cover border-4 border-purple-500">
-                </div>
-                <div class="md:w-2/3 text-lg leading-relaxed text-gray-200">
-                    <p class="mb-4">Yazılım geliştirme alanında kendimi sürekli geliştiren, dinamik bir **Yazılım Geliştirici** ve **Siber Güvenlik Öğrencisiyim**. Mobil ve Full-Stack Web Geliştirme alanlarında yeteneklerimi pekiştirirken, öğrendiğim her yeni bilgiyi güvenlik ilkeleriyle harmanlayarak sağlam, güvenli ve kullanıcı odaklı dijital çözümler üretmeyi hedefliyorum.</p>
-                    <p class="mb-4">Teknolojiye olan tutkum beni her geçen gün yeni ufuklara taşıyor. Şu anda **Java, Python, Dart ve Flutter** gibi diller ve framework'lerle mobil uygulama geliştirme konusunda derinlemesine bilgi ediniyorum. Siber güvenlik alanındaki eğitimlerimle yazılım geliştirme bilgimi daha güvenli ve dirençli sistemler kurma yönünde kullanıyorum. **SQL** ve **Siber Güvenlik** konularındaki öğrenme yolculuğum da hızla devam ediyor.</p>
-                    <p>Geçmişteki depo yönetimi, montaj işçiliği ve hatta garsonluk gibi farklı sektörlerdeki deneyimlerimden edindiğim **planlama, kalite kontrol, takım çalışması, problem çözme ve müşteri memnuniyeti odaklılık** gibi prensipleri, yazılım geliştirme süreçlerime de başarıyla aktarıyorum. Her işte olduğu gibi, yazılımda da detaylara dikkat etmek ve verimli çalışmak benim için bir tutku.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="section">
+    <h2>Eğitim Yolculuğum: Temelden Zirveye!</h2>
+    <div class="education-item">
+        <h3>Lise Diploması, Yiyecek ve İçecek Hizmetleri | Leman Kadir Parıltı Mesleki ve Teknik Anadolu Lisesi</h3>
+        <p class="duration">Eylül 2016 - Haziran 2019</p>
+        <p>Mutfaktan gelen o eşsiz disiplin, hız ve detaylara dikkat etme becerisi, şimdi kod satırlarında kendini gösteriyor. Her tarif bir algoritma, her doğru malzeme bir değişkenmiş meğer!</p>
+    </div>
+    <div class="education-item">
+        <h3>Kodluyoruz Mobil Uygulama Geliştirme Bootcamp</h3>
+        <p class="duration">Tarih Bilgisi Eklenecek (Eğer mevcutsa)</p>
+        <p>Modern mobil uygulama geliştirmenin temel ve ileri seviye konularını Flutter ve Dart ile uygulamalı olarak öğrendiğim kapsamlı bir bootcamp. Sadece kod yazmakla kalmadım, temiz kod prensiplerini ve performans optimizasyonunu da keşfettim. Her yeni satır kod, bir mobil cihazda hayat bulan yeni bir özellik demek!</p>
+    </div>
+    <div class="learning-item"> <h3>SQL & Data Science Eğitimi | TürkStudentCo</h3>
+        <p class="duration">Devam Ediyor / Tamamlandı (Sertifika Bekleniyor)</p>
+        <p>Veritabanı yönetimini ve SQL sorgularını derinlemesine öğrenirken, Data Science dünyasına ilk adımlarımı attığım eğitim. Veri analizi, manipülasyonu ve karar verme süreçlerinde verinin gücünü anladım. Bu alandaki bilgimi projelerime entegre etmek için heyecanlıyım!</p>
+    </div>
+</div>
 
-    <section id="skills" class="py-16 md:py-24 bg-gray-900">
-        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Yetenekler</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Programlama Dilleri & Teknolojiler</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-200">
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>Dart</li>
-                        <li>Flutter</li>
-                        <li>SQL</li>
-                        <li>HTML, CSS, JavaScript (Temel)</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Siber Güvenlik</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-200">
-                        <li>Dijital Güvenlik İlkeleri</li>
-                        <li>Siber Güvenlik Temelleri</li>
-                        <li>Etik Hackerlık (Öğrenim Aşamasında)</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Yapay Zeka</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-200">
-                        <li>Yapay Zeka ile Pazarlama Stratejileri</li>
-                        <li>Temel Yapay Zeka Uygulamaları</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold mb-4 text-indigo-400">Kişisel Yetenekler</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-200">
-                        <li>Problem Çözme ve Analitik Düşünme</li>
-                        <li>Takım Çalışması ve Etkin İletişim</li>
-                        <li>Kalite Kontrol ve Detay Odaklılık</li>
-                        <li>Hızlı Öğrenme ve Adaptasyon</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="section">
+    <h2>Projeler: Kodlarla İnşa Ettiğim Dünya</h2>
+    <div class="project">
+        <h3>💡 EmpowerHER: Kadınların Gücü Adına Yapay Zeka Destekli İlham Platformu</h3>
+        <p>Yapay zekâ destekli bu platform, kadın liderlerin başarı hikayelerini kullanıcıların ilgisine göre eşleştirerek rol model sunuyor. Kadınların teknoloji ve liderlik alanındaki potansiyelini ortaya çıkarmak için tasarlandı. Sadece bir uygulama değil, aynı zamanda toplumsal bir vizyon projesi!</p>
+    </div>
+    <div class="project">
+        <h3>🔐 Dijital Güvenlik Uygulaması: Siber Kalkanınız!</h3>
+        <p>Flutter ve Dart ile Firebase kullanarak geliştirdiğim mobil uygulama. Kullanıcı davranış analizi, çok faktörlü kimlik doğrulama (MFA) ve şüpheli aktivite tespiti gibi gelişmiş yöntemlerle dijital şiddete ve tehditlere karşı güçlü bir koruma sağlıyor. Sadece kod yazmak değil, güvenliği de ön planda tutarak siber dünyada güvenli bir alan yaratma hedefiyle geliştirildi.</p>
+    </div>
+    <div class="project">
+        <h3>🐍 CyberStart Ödevleri: Python ile Siber Dedektiflik</h3>
+        <p>IBM ve Kodluyoruz iş birliğiyle yürütülen bu programda, Python tabanlı siber güvenlik çözümleri geliştirdim. Ağ güvenliği, web zafiyetleri, kriptografi ve adli bilişim gibi alanlarda uygulamalı deneyim kazandım. Her bir ödev, siber tehditleri anlama ve onlara karşı etkili savunma mekanizmaları kurma becerimi geliştiren birer bulmaca gibiydi.</p>
+    </div>
+    <div class="project">
+        <h3>🎯 EduTrack SQL Projesi: Veritabanı Mimarisi</h3>
+        <p>Eğitim platformları için tasarlanmış kapsamlı bir veritabanı modeli. Kurslar, kullanıcılar, sertifikalar ve ilerleme takibi gibi temel yapıları içerir. Verilerin düzenli, erişilebilir ve yönetilebilir olmasını sağlayan bu proje, karmaşık veri ilişkilerini anlama ve optimize etme yeteneğimi sergiliyor.</p>
+    </div>
+    <div class="project">
+        <h3>🔢 Temel Algoritmik Uygulamalar: Fibonacci Dizisi ve Daha Fazlası</h3>
+        <p>Python ile geliştirdiğim bu mini projeler, temel algoritma bilgimi ve problem çözme yeteneğimi pekiştiriyor. Algoritmaların sadece teorik kavramlar olmadığını, somut problemlere nasıl uygulanabileceğini gösteren, analitik düşünme becerimin bir yansıması.</p>
+    </div>
+    <div class="project">
+        <h3>📱 Mobil Uygulama Geliştirme Ödevleri Koleksiyonu (Flutter & Dart)</h3>
+        <p>Kodluyoruz Bootcamp'i kapsamında Flutter ve Dart ile geliştirdiğim çeşitli mobil uygulama ödevlerinin bir araya geldiği koleksiyon. Temel UI/UX prensiplerini, widget yapılarını, navigasyonu ve API entegrasyonlarını uygulamalı olarak öğrendiğim bu çalışmalar, mobil geliştirme yolculuğumdaki ilk somut adımlarımdır.</p>
+    </div>
+</div>
 
-    <section id="projects" class="py-16 md:py-24 bg-gray-800">
-        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Projelerim</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="projects/mobil-uygulama.html" class="block bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Mobil Uygulama Geliştirme (Flutter)</h3>
-                    <p class="text-gray-200 mb-4 flex-grow">Kullanıcı dostu arayüze sahip, çapraz platform uyumlu bir mobil uygulama projesi. Dart ve Flutter framework'ünü kullanarak geliştirildi.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Flutter</span>
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Dart</span>
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">UI/UX</span>
-                    </div>
-                    <div class="flex justify-end space-x-3 mt-auto">
-                        <span class="text-indigo-400 flex items-center">
-                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            Detayları Gör
-                        </span>
-                    </div>
-                </a>
+<div class="section">
+    <h2>Deneyim Haritam: Kod Yazmadan Önceki Küllerimden Doğuşum</h2>
+    <div class="experience-item">
+        <h3>Depo Görevlisi | Eren Perakende</h3>
+        <p class="duration">Ekim 2024 - Mart 2025 (6 ay)</p>
+        <p class="location">Ergene, Tekirdağ, Türkiye</p>
+        <ul>
+            <li>⚡ **Dijital Süreç Uzmanı:** Terminal kullanarak mal kabul ve envanter kayıt işlemlerini dijital ortamda verimli bir şekilde gerçekleştirdim. Fiziksel dünyada dahi otomasyon ve verimlilik odaklı çalıştım.</li>
+            <li>⚡ **Sistem Analisti:** Depo düzeni ve ürün yerleşiminde aktif rol alarak, envanter takibi ve lojistik süreçlerinin sorunsuz ilerlemesine katkı sağladım. Her şeyin bir algoritması olduğunu o zamanlar fark ettim!</li>
+            <li>⚡ **Operasyonel Verimlilik Sihirbazı:** Koli açma ve ürün yerleştirme gibi fiziksel işleri hızlı ve düzenli bir şekilde yaparak depo operasyonlarının akıcılığını destekledim. Hız ve optimizasyonun temelleri burada atıldı.</li>
+            <li>⚡ **Hızlı Öğrenme & Adaptasyon Şampiyonu:** Yeni görevlere hızla adapte olarak çeşitli depo işlerinde etkin bir şekilde rol aldım. Bu esneklik, teknoloji dünyasındaki hızlı değişimlere uyum sağlamamın anahtarı oldu.</li>
+        </ul>
+    </div>
+    <div class="experience-item">
+        <h3>Montaj İşçisi | Pilsan Plastik ve Oyuncak San. A.Ş.</h3>
+        <p class="duration">Nisan 2024 - Mayıs 2024 (2 ay)</p>
+        <p class="location">Çorlu, Tekirdağ, Türkiye</p>
+        <ul>
+            <li>⚡ **Detay Odaklı Kalite Güvenceci:** Montaj sürecinde kalite standartlarına uyumu sağlayarak ürünlerin (oyuncakların) hatasız ve doğru bir şekilde birleştirilmesini temin ettim; temizleme, kategorize etme ve barkodlama gibi aşamalarda titizlikle çalıştım. Yazılımda "bug" avcılığına olan yatkınlığım buradan geliyor!</li>
+            <li>⚡ **Üretim Akışı Yönetimi:** Üretim hedeflerine ulaşmak için aktif katkıda bulunarak, ürünlerin kolilenmesi ve barkodlarının yapıştırılması dahil tüm montaj süreçlerini takip ettim. Her üretim süreci, iyi planlanmış bir proje yönetimi dersidir.</li>
+            <li>⚡ **Kollektif Zeka Destekçisi:** Ekip içinde etkin iletişim kurarak iş birliğini güçlendirdim ve sorunsuz ilerlemeyi destekledim. Büyük işler her zaman ekip ruhuyla başarılır!</li>
+        </ul>
+    </div>
+    <div class="experience-item">
+        <h3>Dikiş Makinesi Operatörü | ARIK BEY TEKSTİL</h3>
+        <p class="duration">Ekim 2022 - Aralık 2023 (1 yıl 3 ay)</p>
+        <p class="location">Beyşehir, Konya, Türkiye</p>
+        <ul>
+            <li>⚡ **Hassas Üretim & Kalite Kontrol:** Çeşitli dikiş makinelerini ustaca kullanarak giysi ve tekstil ürünlerinin dikimini gerçekleştirdim; ürünlerde kalite kontrolü yaparak hatasız ve standartlara uygun üretimi sağladım. Her dikiş bir kod satırı, her hata bir "bug" analiziydi.</li>
+            <li>⚡ **Süreç Optimizasyonu:** Üretim hedeflerine ulaşmak için planlı ve hızlı çalıştım; makinelerin düzenli bakımını yaparak arızaları önledim ve üretim kesintilerini minimize ettim. Makineleri optimize etmeyi biliyorum, şimdi sıra algoritmalarımda!</li>
+            <li>⚡ **Güvenlik Bilinci:** Güvenli bir çalışma ortamı sağlamak adına iş sağlığı ve güvenliği kurallarına titizlikle uydum. Dijital güvenlik de tıpkı fiziksel güvenlik gibi, önce tedbir!</li>
+            <li>⚡ **Ekip Koordinasyonu:** Üretim ekibiyle uyum içinde çalışarak süreçlerin verimli ve sorunsuz ilerlemesine aktif katkıda bulundum. Koordinasyon ve uyum, her alanda başarının anahtarı.</li>
+        </ul>
+    </div>
+    <div class="experience-item">
+        <h3>Garson | Bereket Restaurant</h3>
+        <p class="duration">Eylül 2018 - Haziran 2019 (10 ay)</p>
+        <p class="location">Seydişehir, Konya, Türkiye</p>
+        <ul>
+            <li>⚡ **Müşteri Odaklı İletişim Uzmanı:** Restoran ortamında yüksek müşteri memnuniyeti sağlayarak ve etkili iletişim becerileri geliştirerek, kullanıcı deneyiminin temelini attım.</li>
+            <li>⚡ **Operasyonel Süreç Yöneticisi:** Sipariş alma, yiyecek ve içecekleri hızlı ve doğru bir şekilde servis etme gibi restoran operasyonlarının temel süreçlerini başarıyla yönettim. Bir nevi hızlı ve hatasız "backend" operasyonu!</li>
+            <li>⚡ **Esnek Ekip Oyuncusu:** Restoran ekibiyle uyum içinde çalışarak operasyonel verimliliğe ve sorunsuz hizmet akışına aktif katkıda bulundum. Tek başına bir şey yapamazsın, uyum şart!</li>
+        </ul>
+    </div>
+    <div class="experience-item">
+        <h3>Garson | Bilgem Pastanesi</h3>
+        <p class="duration">Eylül 2017 - Eylül 2018 (1 yıl 1 ay)</p>
+        <p class="location">Seydişehir, Konya, Türkiye</p>
+        <ul>
+            <li>⚡ **Üretim Süreçlerine Katılım & Kalite Standartları:** Pastane mutfağında pasta ve tatlı yapım süreçlerine aktif katkıda bulunarak, üretim standartlarına ve hijyen kurallarına titizlikle uygun çalıştım. Her tatlı bir algoritma, her doğru malzeme bir değişken!</li>
+            <li>⚡ **Müşteri Deneyimi Yaratıcısı:** Müşterilere yiyecek ve içecek hizmeti sunarak, sipariş alma ve servis etme becerilerimi geliştirdim; müşteri memnuniyetini en üst düzeyde sağladım. Pastaneden yazılıma, kullanıcı deneyimi hep öncelikli!</li>
+            <li>⚡ **Zaman Yönetimi Lideri:** Yoğun pastane ortamında etkili zaman yönetimi uygulayarak hem mutfak hem de servis süreçlerinin sorunsuz ilerlemesine destek oldum. Deadline'lara uyma yeteneğim o günlerden miras!</li>
+        </ul>
+    </div>
+</div>
 
-                <a href="projects/siber-guvenlik-araci.html" class="block bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Siber Güvenlik Aracı (Python)</h3>
-                    <p class="text-gray-200 mb-4 flex-grow">Gelecekte geliştirilecek, güvenlik açıklarını tespit etmeye ve veri korumaya yönelik potansiyel bir araç.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Siber Güvenlik</span>
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Gelecek Proje</span>
-                    </div>
-                    <div class="flex justify-end space-x-3 mt-auto">
-                        <span class="text-indigo-400 flex items-center">
-                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            Detayları Gör
-                        </span>
-                    </div>
-                </a>
-
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Web Uygulaması Geliştirme (Java)</h3>
-                    <p class="text-gray-200 mb-4 flex-grow">Veritabanı entegrasyonlu, dinamik bir web uygulaması projesi. Java ve ilgili web teknolojileri kullanılarak geliştirildi.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Java</span>
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Web Geliştirme</span>
-                        <span class="bg-purple-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Veritabanı</span>
-                    </div>
-                    <div class="flex justify-end space-x-3 mt-auto">
-                        <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 flex items-center">
-                            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.775.418-1.305.762-1.605-2.665-.3-5.464-1.33-5.464-5.93 0-1.31.465-2.38 1.235-3.22-.125-.3-.535-1.52.117-3.176 0 0 1.008-.322 3.301 1.23a11.51 11.51 0 016 0c2.293-1.552 3.3-1.23 3.3-1.23.653 1.656.243 2.876.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.8 5.62-5.475 5.92.43.37.81 1.096.81 2.22 0 1.606-.015 2.898-.015 3.286 0 .318.21.69.825.577C20.565 21.8 24 17.303 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <p class="text-center text-gray-400 mt-12 text-lg">Daha fazla projem için <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">GitHub profilimi</a> ziyaret edebilirsiniz!</p>
-        </div>
-    </section>
-
-    <section id="certifications" class="py-16 md:py-24 bg-gray-900">
-        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title mx-auto text-white">Sertifikalarım</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center space-x-4 mb-3">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-lg font-medium text-gray-200">EmpowerHER Ideathon</p>
-                    </div>
-                    <p class="text-sm text-gray-300">Kadınların teknoloji alanındaki projelerini destekleyen bir ideathon'a katılım ve yenilikçi fikir geliştirme sürecinde yer aldım.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center space-x-4 mb-3">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-lg font-medium text-gray-200">Gelecek Hayalim Projesi: W-Code</p>
-                    </div>
-                    <p class="text-sm text-gray-300">Yazılım geliştirme becerilerini ilerletmeye yönelik kapsamlı bir eğitim programını başarıyla tamamladım.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center space-x-4 mb-3">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-lg font-medium text-gray-200">Kendi İşini Kur: Girişimci Doğulmaz; Girişimci Gibi Düşünülür!</p>
-                    </div>
-                    <p class="text-sm text-gray-300">Girişimcilik ve iş kurma süreçleri hakkında temel bilgi ve stratejiler edinerek, kendi işimi kurma potansiyelimi geliştirdim.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center space-x-4 mb-3">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-lg font-medium text-gray-200">IBM ile Kodluyoruz: CyberStart</p>
-                    </div>
-                    <p class="text-sm text-gray-300">Siber güvenlik alanında pratik beceriler kazanarak ve temel güvenlik prensiplerini öğrenerek dijital dünyayı daha güvenli hale getirme yeteneğimi artırdım.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center space-x-4 mb-3">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-lg font-medium text-gray-200">Microsoft Word Temelleri</p>
-                    </div>
-                    <p class="text-sm text-gray-300">Microsoft Word programının temel özelliklerini ve kullanımını öğrenerek belge oluşturma ve düzenleme becerilerimi geliştirdim.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center space-x-4 mb-3">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-sm text-gray-300">Bilgisayar bilimlerinin temelini oluşturan algoritmalar ve veri yapıları hakkında derinlemesine bilgi edinerek, daha verimli ve optimize edilmiş kod yazma yeteneğimi artırdım.</p>
-                    </div>
-                </div>
+<div class="section">
+    <h2>Sertifikalarım: Başarı Rozetlerim ve Öğrenme Tutkumun Kanıtı</h2>
+    <div class="certs-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">IBM ile Kodluyoruz: CyberStart Essentials</div>
+                <div class="flip-card-back">IBM & Kodluyoruz işbirliği ile temel siber güvenlik becerilerini ve "kötü adam" düşünme tarzını geliştirdiğim bu eğitimle, dijital dünyayı daha iyi koruma yolunda sağlam adımlar attım.</div>
             </div>
         </div>
-    </section>
-
-    <section id="contact" class="py-16 md:py-24 bg-gray-800">
-        <div class="container mx-auto px-4 md:px-6 max-w-2xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto text-white">İletişim</h2>
-            <p class="text-lg text-gray-200 mb-8">Benimle iletişime geçmekten çekinmeyin! Projeleriniz veya işbirlikleri için her zaman açığım.</p>
-            <div class="flex flex-col items-center space-y-6">
-                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md w-full max-w-sm hover:shadow-xl transition-shadow duration-300">
-                    <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>
-                    <a href="mailto:bushra.dev@hotmail.com" class="text-lg font-medium text-gray-200 hover:text-indigo-300 transition-colors duration-300">bushra.dev@hotmail.com</a>
-                </div>
-                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md w-full max-w-sm hover:shadow-xl transition-shadow duration-300">
-                    <svg class="w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                    <a href="https://www.linkedin.com/in/bushra-dev" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-gray-200 hover:text-indigo-300 transition-colors duration-300">LinkedIn Profilim</a>
-                </div>
-                <div class="flex items-center space-x-3 bg-gray-700 p-4 rounded-lg shadow-md w-full max-w-sm hover:shadow-xl transition-shadow duration-300">
-                    <svg class="w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.775.418-1.305.762-1.605-2.665-.3-5.464-1.33-5.464-5.93 0-1.31.465-2.38 1.235-3.22-.125-.3-.535-1.52.117-3.176 0 0 1.008-.322 3.301 1.23a11.51 11.51 0 016 0c2.293-1.552 3.3-1.23 3.3-1.23.653 1.656.243 2.876.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.8 5.62-5.475 5.92.43.37.81 1.096.81 2.22 0 1.606-.015 2.898-.015 3.286 0 .318.21.69.825.577C20.565 21.8 24 17.303 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
-                    <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-gray-200 hover:text-indigo-300 transition-colors duration-300">GitHub Profilim</a>
-                </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Kodluyoruz Mobil Uygulama Geliştirme Bootcamp</div>
+                <div class="flip-card-back">Kapsamlı bir bootcamp ile Flutter ve Dart kullanarak modern mobil uygulamalar geliştirmeyi öğrendim. UI/UX prensiplerinden veri yönetimine kadar geniş bir yelpazede pratik deneyim kazandım.</div>
             </div>
         </div>
-    </section>
-
-    <footer class="bg-gray-900 text-white py-6 text-center">
-        <div class="container mx-auto px-4">
-            <p>&copy; <span id="current-year"></span> Büşra Kurt. Tüm Hakları Saklıdır.</p>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Gelecek Hayalim Projesi: W-Code</div>
+                <div class="flip-card-back">Teknolojide kadınların geleceğine odaklanan, ilham veren bu programda sadece kod yazmakla kalmadım, aynı zamanda kadınların sektördeki yerini sağlamlaştırmak için vizyon edindim. Gelecek bizim, kodlar bizim!</div>
+            </div>
         </div>
-    </footer>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">EmpowerHER Ideathon Katılımcısı</div> <div class="flip-card-back">Teknolojide Kadın Derneği kapsamında fikir üreterek takım çalışması yeteneklerimi zirveye taşıdığım bu ideathon, yaratıcı problem çözümü ve iş birliğinin gücüyle ilgiliydi. Sadece kod değil, fikir de ürettim!</div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Kendi İşini Kur: Girişimci Gibi Düşün!</div> <div class="flip-card-back">Girişimcilik ve iş kurma stratejileri üzerine aldığım bu eğitimle, sadece kod yazmanın ötesinde, projelerin nasıl hayata geçirileceği ve sürdürülebilir hale getirileceği konusunda "sıra dışı" düşünmeyi öğrendim.</div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Algoritmalar ve Veri Yapıları</div> <div class="flip-card-back">Bilgisayarların dili olan algoritma tasarımı ve veri yapıları konularında temel bilgilerimi pekiştirdiğim bu eğitimle, hızlı, verimli ve optimize edilmiş kod yazmanın sırlarını keşfettim.</div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Microsoft Word Temelleri</div>
+                <div class="flip-card-back">"Word ne alaka?" deme! Profesyonel iletişimde ve dokümantasyonda temel ofis programlarına hakimiyet vazgeçilmezdir. Bazen karmaşık kodlar yerine düzgün bir rapor da gerekebilir!</div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <script src="js/script.js"></script>
+<footer>
+    <p>&copy; 2025 Büşra Kurt. Dijital Dünyanın Güvenliği Benimle Başlar.</p>
+    <div class="footer-social-links">
+        <a href="mailto:bushra.dev@hotmail.com" target="_blank" rel="noopener noreferrer" title="Bana E-posta Gönder"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/bushranovaaa/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profilim"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/bushranovaaa" target="_blank" rel="noopener noreferrer" title="GitHub Profilim"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
+
 </body>
 </html>
