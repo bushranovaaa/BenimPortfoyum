@@ -100,5 +100,5 @@ Bu projenin gelişmesine dair fikirlerin, geri bildirimlerin veya katkıların v
 Her türlü soru, iş birliği teklifi veya sadece merhaba demek için bana ulaşmaktan çekinme:
 
 -   **E-posta:** bushra.dev@hotmail.com
--   **LinkedIn:** linkedin.com/in/bushra-dev
--   **GitHub:** github.com/bushranovaaa
+-   **LinkedIn:** linkedin.com/in/busrabuseecodes
+-   **GitHub:** github.com/busrabuseecodes
